@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131d">
+  <title>CreatorFlow Studio — YouTube Automation Workspace</title>
+  <meta name="description" content="AI-powered YouTube planning and production workspace. Find niches, create ideas, scripts, storyboards, thumbnails and SEO packs.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="CreatorFlow home">
+        <span class="brand-mark">▶</span><span>Creator<span class="brand-accent">Flow</span><small>STUDIO</small></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-view="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-item" data-view="niche"><span>⌕</span> Niche Finder</button>
+        <button class="nav-item" data-view="ideas"><span>✦</span> Idea Lab</button>
+        <button class="nav-item" data-view="script"><span>▤</span> Script Writer</button>
+        <button class="nav-item" data-view="storyboard"><span>▧</span> Storyboard</button>
+        <button class="nav-item" data-view="thumbnail"><span>▣</span> Thumbnail Studio</button>
+        <button class="nav-item" data-view="seo"><span>⌗</span> SEO & Publishing</button>
+        <button class="nav-item" data-view="bank"><span>▣</span> Content Bank <b id="bank-count" class="nav-count">0</b></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="ai-status"><span class="status-dot"></span><div><strong>AI Engine</strong><small id="connection-label">Not tested</small></div></div>
+        <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
+        <p class="sidebar-foot">CreatorFlow Studio <span>v1.0</span></p>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Open menu">☰</button>
+        <div><div class="eyebrow" id="page-eyebrow">YOUR CREATOR WORKSPACE</div><h1 id="page-title">Dashboard</h1></div>
+        <div class="top-actions"><span class="language-pill">ENGLISH · GLOBAL</span><button class="primary-btn small" data-go="ideas">＋ New project</button></div>
+      </header>
+      <section class="view active" id="view-dashboard">
+        <div class="welcome-panel">
+          <div><div class="eyebrow light">YOUR NEXT VIDEO STARTS HERE</div><h2>Turn ideas into a<br><em>content machine.</em></h2><p>Research, plan and build your YouTube content workflow in one place.</p><button class="white-btn" data-go="niche">Find my best niche <span>→</span></button></div>
+          <div class="hero-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="play-tile">▶</div><span class="orbit-tag tag-a">IDEA</span><span class="orbit-tag tag-b">CREATE</span><span class="orbit-tag tag-c">GROW</span></div>
+        </div>
+        <div class="section-heading"><div><div class="eyebrow">OVERVIEW</div><h2>Your production desk</h2></div><span class="muted">A simple workflow from research to publish</span></div>
+        <div class="stat-grid">
+          <article class="stat-card"><span class="stat-icon purple">✦</span><small>Saved assets</small><strong id="stat-assets">0</strong><span class="stat-note">Ideas, scripts & plans</span></article>
+          <article class="stat-card"><span class="stat-icon blue">▤</span><small>Scripts created</small><strong id="stat-scripts">0</strong><span class="stat-note">Saved in your content bank</span></article>
+          <article class="stat-card"><span class="stat-icon orange">▧</span><small>Storyboards</small><strong id="stat-boards">0</strong><span class="stat-note">Ready for production</span></article>
+          <article class="stat-card"><span class="stat-icon green">◎</span><small>AI connection</small><strong id="stat-ai">—</strong><span class="stat-note" id="stat-ai-note">Configure your Worker</span></article>
+        </div>
+        <div class="section-heading compact"><div><div class="eyebrow">WORKFLOW</div><h2>Choose your next step</h2></div></div>
+        <div class="workflow-grid">
+          <button class="workflow-card" data-go="niche"><span class="workflow-icon purple">⌕</span><strong>Discover a niche</strong><small>Find promising topics and audiences.</small><span class="card-arrow">↗</span></button>
+          <button class="workflow-card" data-go="ideas"><span class="workflow-icon blue">✦</span><strong>Generate video ideas</strong><small>Build a repeatable idea pipeline.</small><span class="card-arrow">↗</span></button>
+          <button class="workflow-card" data-go="script"><span class="workflow-icon orange">▤</span><strong>Write a script</strong><small>Create hooks, narration and CTAs.</small><span class="card-arrow">↗</span></button>
+          <button class="workflow-card" data-go="storyboard"><span class="workflow-icon green">▧</span><strong>Build a storyboard</strong><small>Turn your script into scenes.</small><span class="card-arrow">↗</span></button>
+          <button class="workflow-card" data-go="thumbnail"><span class="workflow-icon pink">▣</span><strong>Plan a thumbnail</strong><small>Develop a visual concept and prompt.</small><span class="card-arrow">↗</span></button>
+          <button class="workflow-card" data-go="seo"><span class="workflow-icon yellow">⌗</span><strong>Prepare to publish</strong><small>Titles, descriptions and tags.</small><span class="card-arrow">↗</span></button>
+        </div>
+        <div class="bottom-note"><span>✧</span><div><strong>Built for a lean creator workflow</strong><p>AI-generated drafts are starting points. Review facts, rights, originality and platform policies before publishing.</p></div></div>
+      </section>
+
+      <section class="view" id="view-niche">
+        <div class="intro"><div class="eyebrow">RESEARCH & STRATEGY</div><h2>Find your next <em>winning niche.</em></h2><p>Ask the AI to evaluate opportunities for a faceless or personality-led YouTube channel.</p></div>
+        <div class="tool-layout"><form class="tool-form" id="niche-form"><label>Channel style<select name="style"><option>Faceless channel</option><option>Personal brand</option><option>Both</option></select></label><label>Content format<select name="format"><option>Both Shorts and long-form</option><option>YouTube Shorts</option><option>Long-form videos</option></select></label><label>Interests or topics (optional)<textarea name="interests" rows="3" placeholder="e.g. technology, history, psychology, business — leave blank for AI discovery"></textarea></label><label>Target audience<input name="audience" placeholder="e.g. English-speaking global audience"></label><button class="primary-btn full" type="submit">✦ Find promising niches</button></form><div class="result-panel"><div class="result-top"><span class="result-label">AI RESEARCH OUTPUT</span><span class="live-chip">● READY</span></div><div class="empty-state" id="niche-result"><span class="empty-symbol">⌕</span><strong>Your niche research will appear here</strong><p>We’ll evaluate audience demand, competition, content potential and monetization angles.</p></div></div></div>
+      </section>
+
+      <section class="view" id="view-ideas">
+        <div class="intro"><div class="eyebrow">CONTENT DISCOVERY</div><h2>Never run out of <em>video ideas.</em></h2><p>Generate a batch of differentiated concepts for your channel.</p></div>
+        <div class="tool-layout"><form class="tool-form" id="ideas-form"><label>Chosen niche<input name="niche" placeholder="e.g. fascinating science explained" required></label><label>Video format<select name="format"><option>Mix of Shorts and long-form</option><option>Shorts only</option><option>Long-form only</option></select></label><label>Number of ideas<select name="count"><option>10</option><option>5</option><option>15</option><option>20</option></select></label><label>Extra direction<textarea name="direction" rows="3" placeholder="Tone, audience, themes to avoid..."></textarea></label><button class="primary-btn full" type="submit">✦ Generate video ideas</button></form><div class="result-panel"><div class="result-top"><span class="result-label">IDEA COLLECTION</span><button class="text-btn" id="save-current-ideas" disabled>＋ Save output</button></div><div class="empty-state" id="ideas-result"><span class="empty-symbol">✦</span><strong>Your next batch starts here</strong><p>Each idea should include a strong angle, format and opening hook.</p></div></div></div>
+      </section>
+
+      <section class="view" id="view-script">
+        <div class="intro"><div class="eyebrow">PRODUCTION</div><h2>Write scripts that <em>hold attention.</em></h2><p>Build a structured draft with a hook, story flow, retention beats and a clear ending.</p></div>
+        <div class="tool-layout"><form class="tool-form" id="script-form"><label>Video topic<input name="topic" placeholder="Enter your video topic" required></label><label>Format<select name="format"><option>Long-form (8–12 minutes)</option><option>Shorts (under 60 seconds)</option><option>Shorts (60–180 seconds)</option><option>Long-form (15–20 minutes)</option></select></label><label>Tone<select name="tone"><option>Engaging and conversational</option><option>Documentary</option><option>Educational and clear</option><option>Storytelling and dramatic</option><option>Funny and energetic</option></select></label><label>Key points<textarea name="points" rows="3" placeholder="Facts, examples or messages to include"></textarea></label><button class="primary-btn full" type="submit">✦ Write my script</button></form><div class="result-panel"><div class="result-top"><span class="result-label">SCRIPT DRAFT</span><button class="text-btn" id="save-current-script" disabled>＋ Save script</button></div><div class="empty-state" id="script-result"><span class="empty-symbol">▤</span><strong>Your script will appear here</strong><p>Review factual claims and add original insight before recording.</p></div></div></div>
+      </section>
+
+      <section class="view" id="view-storyboard">
+        <div class="intro"><div class="eyebrow">VISUAL PLANNING</div><h2>From words to <em>visual scenes.</em></h2><p>Convert a script into a practical shot-by-shot storyboard for editing.</p></div>
+        <div class="tool-layout"><form class="tool-form" id="storyboard-form"><label>Video title<input name="title" placeholder="Working title" required></label><label>Paste your script<textarea name="script" rows="9" placeholder="Paste the complete script here..." required></textarea></label><label>Visual style<select name="style"><option>Cinematic documentary</option><option>Clean motion graphics</option><option>Stock footage and B-roll</option><option>Minimal animation</option><option>Mixed visual storytelling</option></select></label><button class="primary-btn full" type="submit">✦ Create storyboard</button></form><div class="result-panel"><div class="result-top"><span class="result-label">SCENE-BY-SCENE PLAN</span><button class="text-btn" id="save-current-board" disabled>＋ Save storyboard</button></div><div class="empty-state" id="storyboard-result"><span class="empty-symbol">▧</span><strong>Your storyboard will appear here</strong><p>Expect scene descriptions, visual prompts, on-screen text and editing notes.</p></div></div></div>
+      </section>
+
+      <section class="view" id="view-thumbnail">
+        <div class="intro"><div class="eyebrow">CLICK-WORTHY PACKAGING</div><h2>Design the <em>thumbnail concept.</em></h2><p>Generate a clear visual direction and image-generation prompt. This tool creates a brief, not an image file.</p></div>
+        <div class="tool-layout"><form class="tool-form" id="thumbnail-form"><label>Video title<input name="title" placeholder="Your video title" required></label><label>Core promise<textarea name="promise" rows="2" placeholder="What will viewers discover or learn?" required></textarea></label><label>Visual direction<select name="style"><option>Bold, high-contrast YouTube style</option><option>Cinematic and emotional</option><option>Minimal and premium</option><option>Mysterious documentary</option><option>Bright educational</option></select></label><label>Must include (optional)<input name="elements" placeholder="Person, object, setting, words..."></label><button class="primary-btn full" type="submit">✦ Create thumbnail brief</button></form><div class="result-panel"><div class="result-top"><span class="result-label">THUMBNAIL CONCEPT</span><button class="text-btn" id="save-current-thumbnail" disabled>＋ Save concept</button></div><div class="empty-state" id="thumbnail-result"><span class="empty-symbol">▣</span><strong>Your visual concept will appear here</strong><p>Get composition, focal point, text treatment and an image prompt.</p></div></div></div>
+      </section>
+
+      <section class="view" id="view-seo">
+        <div class="intro"><div class="eyebrow">PUBLISHING</div><h2>Package your video for <em>discovery.</em></h2><p>Generate title options, a description, keywords, hashtags and a publishing checklist.</p></div>
+        <div class="tool-layout"><form class="tool-form" id="seo-form"><label>Video topic<input name="topic" placeholder="Your video topic" required></label><label>Main keyword<input name="keyword" placeholder="Primary search phrase"></label><label>Audience<input name="audience" placeholder="Who is this video for?"></label><label>Video summary<textarea name="summary" rows="4" placeholder="Summarize what viewers will get..."></textarea></label><button class="primary-btn full" type="submit">✦ Generate SEO package</button></form><div class="result-panel"><div class="result-top"><span class="result-label">PUBLISHING PACKAGE</span><button class="text-btn" id="save-current-seo" disabled>＋ Save package</button></div><div class="empty-state" id="seo-result"><span class="empty-symbol">⌗</span><strong>Your publishing pack will appear here</strong><p>Use accurate metadata. No tool can guarantee ranking or views.</p></div></div></div>
+      </section>
+
+      <section class="view" id="view-bank">
+        <div class="intro"><div class="eyebrow">YOUR LIBRARY</div><h2>Content <em>bank.</em></h2><p>Saved assets stay in this browser on this device. Export a backup regularly.</p></div>
+        <div class="bank-toolbar"><div class="bank-filters"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="idea">Ideas</button><button class="filter-btn" data-filter="script">Scripts</button><button class="filter-btn" data-filter="storyboard">Storyboards</button><button class="filter-btn" data-filter="thumbnail">Thumbnails</button><button class="filter-btn" data-filter="seo">SEO</button></div><div><button class="secondary-btn" id="export-bank">↓ Export backup</button><button class="secondary-btn" id="import-bank">↑ Import</button><input type="file" id="import-file" accept="application/json" hidden></div></div>
+        <div class="bank-list" id="bank-list"></div>
+      </section>
+
+      <section class="view" id="view-settings">
+        <div class="intro"><div class="eyebrow">CONFIGURATION</div><h2>Workspace <em>settings.</em></h2><p>Connect the AI engine and choose how your content is generated.</p></div>
+        <div class="settings-card"><div class="settings-head"><div><h3>Cloudflare Worker connection</h3><p>Use the Worker URL you deployed. Keep private API keys inside Cloudflare, never in this website.</p></div><span class="setting-symbol">⌘</span></div><form id="settings-form"><label>Worker endpoint URL<input id="worker-url" type="url" placeholder="https://your-worker.your-subdomain.workers.dev" required></label><div class="settings-actions"><button class="primary-btn" type="submit">Save endpoint</button><button class="secondary-btn" type="button" id="test-connection">Test AI connection</button></div></form><div class="connection-result" id="connection-result">No connection test run yet.</div><div class="settings-warning"><strong>Integration note</strong><p>This studio sends JSON requests to your Worker. The expected request includes a <code>task</code> and <code>input</code>. If your Worker uses a different request/response format or does not allow browser CORS, its code must be adjusted. The endpoint URL alone is not an API secret.</p></div></div>
+        <div class="settings-card"><h3>Content defaults</h3><p>These defaults are used as guidance in AI requests.</p><div class="default-grid"><label>Output language<select id="default-language"><option>English</option><option>Indonesian</option><option>Spanish</option><option>Portuguese</option></select></label><label>Channel audience<select id="default-audience"><option>Global English-speaking audience</option><option>United States</option><option>United Kingdom</option><option>Worldwide</option></select></label></div></div>
+      </section>
+      <footer class="main-footer"><span>CreatorFlow Studio</span><span>Plan smarter. Create consistently.</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
